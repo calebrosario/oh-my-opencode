@@ -334,6 +334,38 @@ See [Configuration Documentation](docs/reference/configuration.md).
 - **MCPs**: Built-in websearch (Exa), context7 (docs), grep_app (GitHub search)
 - **LSP**: Full LSP support with refactoring tools
 - **Experimental**: Aggressive truncation, auto-resume, and more
+- **Beads Integration**: Optional task management via [Beads CLI](https://github.com/steveyegge/beads) with auto-init and sync
+
+
+## Beads Integration
+
+[Beads](https://github.com/steveyegge/beads) is a terminal-based task management tool. OhMyOpenCode can optionally integrate with Beads for granular task tracking.
+
+**Enable in `~/.config/opencode/oh-my-opencode.jsonc`:**
+
+```jsonc
+{
+  "beads": {
+    "enabled": true,           // Enable integration (default: false)
+    "auto_init": true,         // Auto-init beads in new sessions
+    "backend": "cli",          // Backend: "cli" | "mcp" | "auto"
+    "sync_on_idle": true,      // Sync on session.idle
+    "beads_command": "bd"      // Beads binary (or full path)
+  }
+}
+```
+
+**Features:**
+- **Auto-init**: Automatically runs `bd init` when starting in a project without `.beads/`
+- **Session sync**: Syncs beads state to git when session goes idle
+- **Doctor check**: `oh-my-opencode doctor` validates beads installation
+
+**Commands available via `beads-cli` tool:**
+- `ready` - List ready issues
+- `create` - Create new issue
+- `update` - Update issue status/priority
+- `close` - Close an issue
+- `sync` - Sync to git
 
 
 ## Author's Note

@@ -17,8 +17,9 @@ export { createThinkModeHook } from "./think-mode";
 export { createModelFallbackHook, setPendingModelFallback, clearPendingModelFallback, type ModelFallbackState } from "./model-fallback/hook";
 export { createClaudeCodeHooksHook } from "./claude-code-hooks";
 export { createRulesInjectorHook } from "./rules-injector";
-export { createBackgroundNotificationHook } from "./background-notification"
+export { createBeadsSyncHook } from "./beads-sync";
 export { createAutoUpdateCheckerHook } from "./auto-update-checker";
+export { createBackgroundNotificationHook } from "./background-notification";
 
 export { createAgentUsageReminderHook } from "./agent-usage-reminder";
 export { createKeywordDetectorHook } from "./keyword-detector";
